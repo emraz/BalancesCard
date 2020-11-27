@@ -15,6 +15,9 @@
 		939627A72570F52B00452131 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 939627A52570F52B00452131 /* LaunchScreen.storyboard */; };
 		939627B22570F52B00452131 /* BalancesCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939627B12570F52B00452131 /* BalancesCardTests.swift */; };
 		939627BD2570F52B00452131 /* BalancesCardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939627BC2570F52B00452131 /* BalancesCardUITests.swift */; };
+		939627DB2570FB0600452131 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939627DA2570FB0600452131 /* Error.swift */; };
+		939627E22570FC7600452131 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939627E12570FC7600452131 /* SummaryViewController.swift */; };
+		939627E72570FC9100452131 /* SummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939627E62570FC9100452131 /* SummaryViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		939627B82570F52B00452131 /* BalancesCardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BalancesCardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		939627BC2570F52B00452131 /* BalancesCardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalancesCardUITests.swift; sourceTree = "<group>"; };
 		939627BE2570F52B00452131 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		939627DA2570FB0600452131 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		939627E12570FC7600452131 /* SummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
+		939627E62570FC9100452131 /* SummaryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,8 @@
 		939627992570F52600452131 /* BalancesCard */ = {
 			isa = PBXGroup;
 			children = (
+				939627CE2570FA8400452131 /* Model */,
+				939627CD2570F99F00452131 /* Scene */,
 				9396279A2570F52600452131 /* AppDelegate.swift */,
 				9396279C2570F52600452131 /* SceneDelegate.swift */,
 				9396279E2570F52600452131 /* ViewController.swift */,
@@ -126,6 +134,39 @@
 				939627BE2570F52B00452131 /* Info.plist */,
 			);
 			path = BalancesCardUITests;
+			sourceTree = "<group>";
+		};
+		939627CD2570F99F00452131 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				939627DF2570FC4C00452131 /* SummaryScene */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		939627CE2570FA8400452131 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				939627DA2570FB0600452131 /* Error.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		939627DF2570FC4C00452131 /* SummaryScene */ = {
+			isa = PBXGroup;
+			children = (
+				939627E62570FC9100452131 /* SummaryViewModel.swift */,
+				939627E12570FC7600452131 /* SummaryViewController.swift */,
+				939627E02570FC5A00452131 /* Subviews */,
+			);
+			path = SummaryScene;
+			sourceTree = "<group>";
+		};
+		939627E02570FC5A00452131 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +299,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				939627DB2570FB0600452131 /* Error.swift in Sources */,
 				9396279F2570F52600452131 /* ViewController.swift in Sources */,
 				9396279B2570F52600452131 /* AppDelegate.swift in Sources */,
 				9396279D2570F52600452131 /* SceneDelegate.swift in Sources */,
+				939627E22570FC7600452131 /* SummaryViewController.swift in Sources */,
+				939627E72570FC9100452131 /* SummaryViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
