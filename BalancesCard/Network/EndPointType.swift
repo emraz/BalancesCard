@@ -1,6 +1,6 @@
 //
 //  EndPointType.swift
-//  Pets
+//  BalancesCard
 //
 //  Created by Mahmudul Hasan on 11/27/20.
 //

@@ -30,6 +30,10 @@
 		9396280825714EDC00452131 /* BalanceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9396280525714EDC00452131 /* BalanceAPI.swift */; };
 		9396280925714EDC00452131 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9396280625714EDC00452131 /* Networking.swift */; };
 		9396280A25714EDC00452131 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9396280725714EDC00452131 /* EndPointType.swift */; };
+		939628142571501A00452131 /* transactions_3.json in Resources */ = {isa = PBXBuildFile; fileRef = 939628102571501A00452131 /* transactions_3.json */; };
+		939628152571501A00452131 /* transactions_2.json in Resources */ = {isa = PBXBuildFile; fileRef = 939628112571501A00452131 /* transactions_2.json */; };
+		939628162571501A00452131 /* transactions_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 939628122571501A00452131 /* transactions_1.json */; };
+		939628172571501A00452131 /* accounts.json in Resources */ = {isa = PBXBuildFile; fileRef = 939628132571501A00452131 /* accounts.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +83,10 @@
 		9396280525714EDC00452131 /* BalanceAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalanceAPI.swift; sourceTree = "<group>"; };
 		9396280625714EDC00452131 /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		9396280725714EDC00452131 /* EndPointType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		939628102571501A00452131 /* transactions_3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = transactions_3.json; sourceTree = "<group>"; };
+		939628112571501A00452131 /* transactions_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = transactions_2.json; sourceTree = "<group>"; };
+		939628122571501A00452131 /* transactions_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = transactions_1.json; sourceTree = "<group>"; };
+		939628132571501A00452131 /* accounts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = accounts.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,8 +137,9 @@
 		939627992570F52600452131 /* BalancesCard */ = {
 			isa = PBXGroup;
 			children = (
-				9396280425714EDC00452131 /* Network */,
 				939627EB2571042B00452131 /* Ext */,
+				9396280E2571500600452131 /* Resources */,
+				9396280425714EDC00452131 /* Network */,
 				939627CE2570FA8400452131 /* Model */,
 				939627CD2570F99F00452131 /* Scene */,
 				9396279A2570F52600452131 /* AppDelegate.swift */,
@@ -219,6 +228,25 @@
 				9396280725714EDC00452131 /* EndPointType.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		9396280E2571500600452131 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9396280F2571501A00452131 /* json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9396280F2571501A00452131 /* json */ = {
+			isa = PBXGroup;
+			children = (
+				939628102571501A00452131 /* transactions_3.json */,
+				939628112571501A00452131 /* transactions_2.json */,
+				939628122571501A00452131 /* transactions_1.json */,
+				939628132571501A00452131 /* accounts.json */,
+			);
+			path = json;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,8 +352,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				939628142571501A00452131 /* transactions_3.json in Resources */,
+				939628152571501A00452131 /* transactions_2.json in Resources */,
 				939627FD25714EA800452131 /* SummaryHeaderView.xib in Resources */,
 				939627A72570F52B00452131 /* LaunchScreen.storyboard in Resources */,
+				939628172571501A00452131 /* accounts.json in Resources */,
+				939628162571501A00452131 /* transactions_1.json in Resources */,
 				9396280025714EA900452131 /* SummaryTableViewCell.xib in Resources */,
 				939627A42570F52B00452131 /* Assets.xcassets in Resources */,
 				939627A22570F52700452131 /* Main.storyboard in Resources */,
