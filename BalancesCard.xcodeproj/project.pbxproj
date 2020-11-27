@@ -23,6 +23,13 @@
 		939627F32571042B00452131 /* Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939627EE2571042B00452131 /* Ext.swift */; };
 		939627F42571042B00452131 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939627EF2571042B00452131 /* Response.swift */; };
 		939627F52571042B00452131 /* UIButtonSubclass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939627F02571042B00452131 /* UIButtonSubclass.swift */; };
+		939627FD25714EA800452131 /* SummaryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 939627F925714EA800452131 /* SummaryHeaderView.xib */; };
+		939627FE25714EA800452131 /* SummaryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939627FA25714EA800452131 /* SummaryHeaderView.swift */; };
+		939627FF25714EA900452131 /* SummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939627FB25714EA800452131 /* SummaryTableViewCell.swift */; };
+		9396280025714EA900452131 /* SummaryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 939627FC25714EA800452131 /* SummaryTableViewCell.xib */; };
+		9396280825714EDC00452131 /* BalanceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9396280525714EDC00452131 /* BalanceAPI.swift */; };
+		9396280925714EDC00452131 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9396280625714EDC00452131 /* Networking.swift */; };
+		9396280A25714EDC00452131 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9396280725714EDC00452131 /* EndPointType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +72,13 @@
 		939627EE2571042B00452131 /* Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ext.swift; sourceTree = "<group>"; };
 		939627EF2571042B00452131 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		939627F02571042B00452131 /* UIButtonSubclass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonSubclass.swift; sourceTree = "<group>"; };
+		939627F925714EA800452131 /* SummaryHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SummaryHeaderView.xib; sourceTree = "<group>"; };
+		939627FA25714EA800452131 /* SummaryHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryHeaderView.swift; sourceTree = "<group>"; };
+		939627FB25714EA800452131 /* SummaryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryTableViewCell.swift; sourceTree = "<group>"; };
+		939627FC25714EA800452131 /* SummaryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SummaryTableViewCell.xib; sourceTree = "<group>"; };
+		9396280525714EDC00452131 /* BalanceAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalanceAPI.swift; sourceTree = "<group>"; };
+		9396280625714EDC00452131 /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		9396280725714EDC00452131 /* EndPointType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +129,7 @@
 		939627992570F52600452131 /* BalancesCard */ = {
 			isa = PBXGroup;
 			children = (
+				9396280425714EDC00452131 /* Network */,
 				939627EB2571042B00452131 /* Ext */,
 				939627CE2570FA8400452131 /* Model */,
 				939627CD2570F99F00452131 /* Scene */,
@@ -176,6 +191,10 @@
 		939627E02570FC5A00452131 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				939627FA25714EA800452131 /* SummaryHeaderView.swift */,
+				939627F925714EA800452131 /* SummaryHeaderView.xib */,
+				939627FB25714EA800452131 /* SummaryTableViewCell.swift */,
+				939627FC25714EA800452131 /* SummaryTableViewCell.xib */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -190,6 +209,16 @@
 				939627F02571042B00452131 /* UIButtonSubclass.swift */,
 			);
 			path = Ext;
+			sourceTree = "<group>";
+		};
+		9396280425714EDC00452131 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				9396280525714EDC00452131 /* BalanceAPI.swift */,
+				9396280625714EDC00452131 /* Networking.swift */,
+				9396280725714EDC00452131 /* EndPointType.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,7 +324,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				939627FD25714EA800452131 /* SummaryHeaderView.xib in Resources */,
 				939627A72570F52B00452131 /* LaunchScreen.storyboard in Resources */,
+				9396280025714EA900452131 /* SummaryTableViewCell.xib in Resources */,
 				939627A42570F52B00452131 /* Assets.xcassets in Resources */,
 				939627A22570F52700452131 /* Main.storyboard in Resources */,
 			);
@@ -322,15 +353,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9396280A25714EDC00452131 /* EndPointType.swift in Sources */,
 				939627F12571042B00452131 /* UI+Extension.swift in Sources */,
 				939627DB2570FB0600452131 /* Error.swift in Sources */,
 				9396279F2570F52600452131 /* ViewController.swift in Sources */,
 				9396279B2570F52600452131 /* AppDelegate.swift in Sources */,
 				939627F42571042B00452131 /* Response.swift in Sources */,
 				9396279D2570F52600452131 /* SceneDelegate.swift in Sources */,
+				9396280925714EDC00452131 /* Networking.swift in Sources */,
 				939627F32571042B00452131 /* Ext.swift in Sources */,
+				9396280825714EDC00452131 /* BalanceAPI.swift in Sources */,
 				939627E22570FC7600452131 /* SummaryViewController.swift in Sources */,
+				939627FE25714EA800452131 /* SummaryHeaderView.swift in Sources */,
 				939627F52571042B00452131 /* UIButtonSubclass.swift in Sources */,
+				939627FF25714EA900452131 /* SummaryTableViewCell.swift in Sources */,
 				939627F22571042B00452131 /* Alert.swift in Sources */,
 				939627E72570FC9100452131 /* SummaryViewModel.swift in Sources */,
 			);
