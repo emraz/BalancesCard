@@ -18,6 +18,11 @@
 		939627DB2570FB0600452131 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939627DA2570FB0600452131 /* Error.swift */; };
 		939627E22570FC7600452131 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939627E12570FC7600452131 /* SummaryViewController.swift */; };
 		939627E72570FC9100452131 /* SummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939627E62570FC9100452131 /* SummaryViewModel.swift */; };
+		939627F12571042B00452131 /* UI+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939627EC2571042B00452131 /* UI+Extension.swift */; };
+		939627F22571042B00452131 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939627ED2571042B00452131 /* Alert.swift */; };
+		939627F32571042B00452131 /* Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939627EE2571042B00452131 /* Ext.swift */; };
+		939627F42571042B00452131 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939627EF2571042B00452131 /* Response.swift */; };
+		939627F52571042B00452131 /* UIButtonSubclass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939627F02571042B00452131 /* UIButtonSubclass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +60,11 @@
 		939627DA2570FB0600452131 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		939627E12570FC7600452131 /* SummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		939627E62570FC9100452131 /* SummaryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryViewModel.swift; sourceTree = "<group>"; };
+		939627EC2571042B00452131 /* UI+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UI+Extension.swift"; sourceTree = "<group>"; };
+		939627ED2571042B00452131 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		939627EE2571042B00452131 /* Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ext.swift; sourceTree = "<group>"; };
+		939627EF2571042B00452131 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		939627F02571042B00452131 /* UIButtonSubclass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonSubclass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +115,7 @@
 		939627992570F52600452131 /* BalancesCard */ = {
 			isa = PBXGroup;
 			children = (
+				939627EB2571042B00452131 /* Ext */,
 				939627CE2570FA8400452131 /* Model */,
 				939627CD2570F99F00452131 /* Scene */,
 				9396279A2570F52600452131 /* AppDelegate.swift */,
@@ -167,6 +178,18 @@
 			children = (
 			);
 			path = Subviews;
+			sourceTree = "<group>";
+		};
+		939627EB2571042B00452131 /* Ext */ = {
+			isa = PBXGroup;
+			children = (
+				939627EC2571042B00452131 /* UI+Extension.swift */,
+				939627ED2571042B00452131 /* Alert.swift */,
+				939627EE2571042B00452131 /* Ext.swift */,
+				939627EF2571042B00452131 /* Response.swift */,
+				939627F02571042B00452131 /* UIButtonSubclass.swift */,
+			);
+			path = Ext;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,11 +322,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				939627F12571042B00452131 /* UI+Extension.swift in Sources */,
 				939627DB2570FB0600452131 /* Error.swift in Sources */,
 				9396279F2570F52600452131 /* ViewController.swift in Sources */,
 				9396279B2570F52600452131 /* AppDelegate.swift in Sources */,
+				939627F42571042B00452131 /* Response.swift in Sources */,
 				9396279D2570F52600452131 /* SceneDelegate.swift in Sources */,
+				939627F32571042B00452131 /* Ext.swift in Sources */,
 				939627E22570FC7600452131 /* SummaryViewController.swift in Sources */,
+				939627F52571042B00452131 /* UIButtonSubclass.swift in Sources */,
+				939627F22571042B00452131 /* Alert.swift in Sources */,
 				939627E72570FC9100452131 /* SummaryViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
