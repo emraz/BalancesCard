@@ -9,17 +9,17 @@ import UIKit
 import Foundation
 
 extension Bundle {
-
+    
     //Just using for test purpose
     func jsonData(fileName: String) -> Data {
         if let path = Bundle.main.path(forResource: fileName, ofType: "json") {
             do {
-                  let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 return data
-              } catch (let error){
+            } catch (let error){
                 print(error.localizedDescription)
-                   return Data()
-              }
+                return Data()
+            }
         }
         return Data()
     }
@@ -59,6 +59,10 @@ extension Date {
 
     static var dayBefore: Date {
         return Calendar.current.date(byAdding: .day, value: -1, to: Date())!
+    }
+    
+    func toString(dateFormat format  : String) -> String {
+        return DateFormatter.with(format: format).string(from: self)
     }
 }
 

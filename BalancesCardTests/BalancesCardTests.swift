@@ -29,5 +29,45 @@ class BalancesCardTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    // MARK: - Successful API call with raw URL
+    func test_network_data_successfull() throws {
+        let expectation = XCTestExpectation(description: "Waiting for the API call to return")
+        let networkManager = Networking()
+        networkManager.requestNetworkTask(endpoint: .accounts, type: AccountTopLevel.self) { (result) in
+            defer {
+                expectation.fulfill()
+            }
+            switch result {
+            case .success(let account):
+                XCTAssertEqual(account.accounts == nil, true)
+            case .failure:
+                break
+            }
+        }
+
+        wait(for: [expectation], timeout: 2.0)
+    }
+
+    // MARK: - Successful API call with local json data
+    func test_local_json_data_successfull() throws {
+        let expectation = XCTestExpectation(description: "Waiting for the API call to return")
+        let networkManager = NetworkingStab()
+        networkManager.requestNetworkTask(endpoint: .accounts, type: AccountTopLevel.self) { (result) in
+            defer {
+                expectation.fulfill()
+            }
+            switch result {
+            case .success(let account):
+                XCTAssertEqual(account.accounts != nil, true)
+//                XCTAssertEqual(config.settings.isCallEnabled, true)
+//                XCTAssertEqual(config.settings.isChatEnabled, true)
+//                XCTAssertEqual(config.settings.workHours, "M-F 23:00 - 23:45")
+            case .failure:
+                break
+            }
+        }
+        wait(for: [expectation], timeout: 2.0)
+    }
 
 }
