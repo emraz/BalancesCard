@@ -47,4 +47,8 @@ class SummaryCellViewModel {
     var amount: String {
         return account.amountDescription
     }
+    
+    var currency: String {
+        return account.currency
+    }
 }

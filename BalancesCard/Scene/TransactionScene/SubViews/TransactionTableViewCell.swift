@@ -43,7 +43,9 @@ class TransactionCellViewModel {
     }
 
     var date: String {
-        return transaction.transactionDate
+        let dateValue = transaction.transactionDate.toDate
+        let day = dateValue.get(.day)
+        return String(describing: day)
     }
     
     var description: String {

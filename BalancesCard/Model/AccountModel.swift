@@ -34,6 +34,7 @@ struct Account: Codable {
 struct AccountInfo {
     let acountName: String
     let amountDescription: String
+    let currency: String
 }
 
 struct SectionedAccountModel {

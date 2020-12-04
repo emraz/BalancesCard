@@ -22,7 +22,7 @@ extension BalanceAPI: EndPointType {
         case .accounts:
             return "/accounts.json"
         case .transaction:
-            return "/transaction_1.json"
+            return "/transactions_2.json"
         }
     }
 }

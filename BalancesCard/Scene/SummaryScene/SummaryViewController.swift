@@ -66,4 +66,12 @@ extension SummaryViewController: UITableViewDelegate {
         clsHeader.name = viewModel.getSecionName(section: section)
         return clsHeader
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let cellViewModel = viewModel.cellViewModel(indexPath: indexPath)
+        let tVC = self.storyboard?.instantiateViewController(identifier: "TransactionViewController") as! TransactionViewController
+        tVC.sModel = cellViewModel
+        self.show(tVC, sender: nil)
+    }
 }

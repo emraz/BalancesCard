@@ -17,12 +17,12 @@ class TransactionViewModel {
     
     private var transactions: [SectionedTransactionModel] = []
     private var totalAmountInAccounts: Int = 0
-    private var totalInAmount: Int = 0
-    private var totalOutAmount: Int = 0
+    private var totalInAmountCurrentMonth: Int = 0
+    private var totalOutAmountCurrentMonth: Int = 0
 
     private var currentCurrency: String = ""
     
-    func getAccounts(completion: (() -> Void)?) {
+    func getTransactions(completion: (() -> Void)?) {
         networking.requestNetworkTask(endpoint: .transaction, type: TransactionTopLevel.self) {[weak self] response in
             guard let this = self else { return}
             switch response {
@@ -36,15 +36,16 @@ class TransactionViewModel {
                 for transaction in allTransactions {
                     
                     let amnt = transaction.amount
-                    let date = transaction.date ?? Date()
+                    let date = transaction.date
                     let trnscnDesc = transaction.transactionDescription ?? ""
                     
-                    let dt = date.toString(dateFormat: "")
-
-                    let transactionInfo = TransactionInfo(transactionDate: dt, transactionDescription: trnscnDesc, amountDescription: "\(amnt)")
+                    let transactionInfo = TransactionInfo(transactionDate: date, transactionDescription: trnscnDesc, amountDescription: "\(amnt)")
                     
-                    let monthInt = Calendar.current.component(.month, from: date) // 4
-                    let monthStr = Calendar.current.monthSymbols[monthInt-1] // April
+                    
+                    let dateValue = transaction.date.toDate
+
+                    let monthInt = Calendar.current.component(.month, from: dateValue)
+                    let monthStr = Calendar.current.monthSymbols[monthInt-1]
 
                     if let index = this.transactions.firstIndex(where: { $0.month == monthStr }) {
                         var transcn = this.transactions[index]
@@ -62,11 +63,11 @@ class TransactionViewModel {
                     }
                 }
                 this.totalAmountInAccounts = totalSum
-                this.totalInAmount = totalIn
-                this.totalOutAmount = totalOut
+                this.totalInAmountCurrentMonth = totalIn
+                this.totalOutAmountCurrentMonth = totalOut
 
                 // SORT
-                this.transactions = this.transactions.sorted { $0.month < $1.month }
+                this.transactions = this.transactions.sorted { $0.month > $1.month }
             case .failure(let error):
                 this.showAlert(with: error.localizedDescription)
             }
@@ -91,6 +92,10 @@ class TransactionViewModel {
         return transactionCellModel
     }
     
+    func setCurrency(crncy: String) {
+        currentCurrency = crncy
+    }
+    
     func getSecionName(section: Int) -> String {
         if (section > transactions.count) { return ""}
         let transaction = transactions[section]
@@ -99,6 +104,14 @@ class TransactionViewModel {
     
     var totalAmount: String {
         "\(currentCurrency)\(totalAmountInAccounts)"
+    }
+    
+    var totalInAmount: String {
+        "\(currentCurrency)\(totalInAmountCurrentMonth)"
+    }
+    
+    var totalOutAmount: String {
+        "\(currentCurrency)\(totalOutAmountCurrentMonth)"
     }
     
     private func showAlert(with msg: String) {

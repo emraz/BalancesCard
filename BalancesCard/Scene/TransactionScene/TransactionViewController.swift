@@ -17,17 +17,19 @@ class TransactionViewController: UIViewController {
     @IBOutlet weak var inAmountLabel: UILabel!
     @IBOutlet weak var outAmountLabel: UILabel!
     
-    private let viewModel = TransactionViewModel()
+    var sModel: SummaryCellViewModel?
     
+    private let viewModel = TransactionViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UINib(nibName: "SummaryTableViewCell",
+        tableView.register(UINib(nibName: "TransactionTableViewCell",
                                  bundle: nil),
-                           forCellReuseIdentifier: SummaryTableViewCell.reuseIdentifier)
+                           forCellReuseIdentifier: TransactionTableViewCell.reuseIdentifier)
         
-        viewModel.getAccounts {[weak self] in
+        viewModel.getTransactions {[weak self] in
             DispatchQueue.main.async {
+                self?.viewModel.setCurrency(crncy: self?.sModel?.currency ?? "")
                 self?.updateConfig()
             }
         }
@@ -35,18 +37,51 @@ class TransactionViewController: UIViewController {
     
     private func updateConfig() {
         tableView.reloadData()
+        
         totalAmountLabel.text = viewModel.totalAmount
+        accountNameLabel.text = sModel?.name
+        inAmountLabel.text = viewModel.totalInAmount
+        outAmountLabel.text = viewModel.totalOutAmount
+    }
+}
+
+extension TransactionViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel.sections
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.getRowsCount(section: section)
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: TransactionTableViewCell.reuseIdentifier,
+                                                       for: indexPath) as? TransactionTableViewCell else {
+            return UITableViewCell()
+        }
+        let cellViewModel = viewModel.cellViewModel(indexPath: indexPath)
+        cell.viewModel = cellViewModel
+        return cell
+    }
 }
+
+extension TransactionViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 32
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let clsHeader: SummaryHeaderView = UIView.fromNib()
+        clsHeader.name = viewModel.getSecionName(section: section)
+        return clsHeader
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+

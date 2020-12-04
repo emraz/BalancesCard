@@ -56,7 +56,7 @@ extension Date {
         let seconds = TimeInterval(timezone.secondsFromGMT(for: self))
         return Date(timeInterval: seconds, since: self)
     }
-
+    
     static var dayBefore: Date {
         return Calendar.current.date(byAdding: .day, value: -1, to: Date())!
     }
@@ -64,11 +64,24 @@ extension Date {
     func toString(dateFormat format  : String) -> String {
         return DateFormatter.with(format: format).string(from: self)
     }
+        
+    func get(_ components: Calendar.Component..., calendar: Calendar = Calendar.current) -> DateComponents {
+        return calendar.dateComponents(Set(components), from: self)
+    }
+    
+    func get(_ component: Calendar.Component, calendar: Calendar = Calendar.current) -> Int {
+        return calendar.component(component, from: self)
+    }
 }
 
 extension String {
     var clock: Date? {
         DateFormatter.clock.date(from: self)
+    }
+    
+    var toDate: Date {
+        let dateFormatter = ISO8601DateFormatter()
+        return dateFormatter.date(from:self) ?? Date()
     }
 }
 
