@@ -33,7 +33,7 @@ class SummaryViewModel {
                     let amoundDesc = "\(account.currency ?? "")\(balance ?? 0)"
                     
                     this.currentCurrency = account.currency ?? ""
-                    let accountInfo = AccountInfo(acountName: name, amountDescription: amoundDesc, currency: account.currency ?? "")
+                    let accountInfo = AccountInfo(acountName: name, amountDescription: amoundDesc, currency: account.currency ?? "", id: account.id)
                     
                     if let index = this.accounts.firstIndex(where: { $0.institution == account.institution }) {
                         var account = this.accounts[index]

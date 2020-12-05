@@ -51,4 +51,8 @@ class SummaryCellViewModel {
     var currency: String {
         return account.currency
     }
+    
+    var id: Int {
+        return account.id
+    }
 }

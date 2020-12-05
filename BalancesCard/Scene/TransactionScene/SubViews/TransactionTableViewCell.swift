@@ -53,6 +53,6 @@ class TransactionCellViewModel {
     }
 
     var amount: String {
-        return transaction.amountDescription
+        return "\(transaction.amount)"
     }
 }

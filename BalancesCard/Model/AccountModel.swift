@@ -35,6 +35,7 @@ struct AccountInfo {
     let acountName: String
     let amountDescription: String
     let currency: String
+    let id: Int
 }
 
 struct SectionedAccountModel {

@@ -27,7 +27,7 @@ class TransactionViewController: UIViewController {
                                  bundle: nil),
                            forCellReuseIdentifier: TransactionTableViewCell.reuseIdentifier)
         
-        viewModel.getTransactions {[weak self] in
+        viewModel.getTransactions(transactionID: sModel?.id ?? 0) {[weak self] in
             DispatchQueue.main.async {
                 self?.viewModel.setCurrency(crncy: self?.sModel?.currency ?? "")
                 self?.updateConfig()
@@ -75,8 +75,11 @@ extension TransactionViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let clsHeader: SummaryHeaderView = UIView.fromNib()
+        let clsHeader: TransactionHeaderView = UIView.fromNib()
         clsHeader.name = viewModel.getSecionName(section: section)
+        clsHeader.inAmnt = viewModel.getInAmout(section: section)
+        clsHeader.outAmnt = viewModel.getOutAmout(section: section)
+
         return clsHeader
     }
     

@@ -34,7 +34,7 @@ struct Transaction: Codable {
 struct TransactionInfo {
     let transactionDate: String
     let transactionDescription: String
-    let amountDescription: String
+    let amount: Int
 }
 
 struct SectionedTransactionModel {

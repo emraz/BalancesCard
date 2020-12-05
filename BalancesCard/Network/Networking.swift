@@ -65,7 +65,7 @@ internal struct NetworkingStab: NetworkingProtocol {
         if T.self == AccountTopLevel.self {
             jsonData = Bundle.main.jsonData(fileName: "accounts")
         }else {
-            jsonData = Bundle.main.jsonData(fileName: "transactions_2")
+            jsonData = Bundle.main.jsonData(fileName: endpoint.path)
         }
         let response = Response(data: jsonData)
         guard let decoded = response.decode(type) else {
