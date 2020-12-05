@@ -19,6 +19,8 @@ class TransactionViewModel {
     private var totalAmountInAccounts: Int = 0
     private var totalInAmountCurrentMonth: Int = 0
     private var totalOutAmountCurrentMonth: Int = 0
+    
+    private var rawDataArray = [Transaction]()
 
     private var currentCurrency: String = ""
     
@@ -46,7 +48,8 @@ class TransactionViewModel {
                 var totalSum: Int = 0
                 var totalIn: Int = 0
                 var totalOut: Int = 0
-                
+                self?.rawDataArray = allTransactions
+                                
                 // MAP
                 for transaction in allTransactions {
                     
@@ -147,6 +150,52 @@ class TransactionViewModel {
         }
         
         return "\(currentCurrency) \(amount)"
+    }
+    
+    func getFilteredData(filterStr: String) {
+
+        let allTransactions = rawDataArray.filter { $0.transactionDescription?.range(of: filterStr, options: .caseInsensitive) != nil}
+        
+        var totalSum: Int = 0
+        var totalIn: Int = 0
+        var totalOut: Int = 0
+                        
+        // MAP
+        for transaction in allTransactions {
+            
+            let amnt = transaction.amount
+            let date = transaction.date
+            let trnscnDesc = transaction.transactionDescription ?? ""
+            
+            let transactionInfo = TransactionInfo(transactionDate: date, transactionDescription: trnscnDesc, amount: amnt)
+            
+            
+            let dateValue = transaction.date.toDate
+            
+            let monthInt = Calendar.current.component(.month, from: dateValue)
+            let monthStr = Calendar.current.monthSymbols[monthInt-1]
+            
+            if let index = transactions.firstIndex(where: { $0.month == monthStr }) {
+                var transcn = transactions[index]
+                transcn.transactionInfo.append(transactionInfo)
+                transactions[index] = transcn
+            } else {
+                transactions.append(SectionedTransactionModel.init(month: monthStr, transactionInfo: [transactionInfo]))
+            }
+            totalSum += transaction.amount
+            if transaction.amount < 0 {
+                totalOut += transaction.amount
+            }
+            else {
+                totalIn += transaction.amount
+            }
+        }
+        totalAmountInAccounts = totalSum
+        totalInAmountCurrentMonth = totalIn
+        totalOutAmountCurrentMonth = totalOut
+        
+        // SORT
+        transactions = transactions.sorted { $0.month > $1.month }
     }
     
     var totalAmount: String {

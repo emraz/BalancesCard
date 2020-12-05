@@ -10,7 +10,6 @@ import UIKit
 class TransactionViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
-    
     @IBOutlet weak var accountNameLabel: UILabel!
     @IBOutlet private weak var totalAmountLabel: UILabel!
     @IBOutlet weak var localCurrencyTotalAmountLabel: UILabel!
@@ -19,16 +18,20 @@ class TransactionViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     
     var sModel: SummaryCellViewModel?
-    
     private let viewModel = TransactionViewModel()
+    private var filteredViewModel = TransactionViewModel()
+
     
+    private var searchActive : Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.delegate = self
+
         if #available(iOS 13.0, *) {
-                    searchBar.searchTextField.backgroundColor = .white
-                    searchBar.searchTextField.tintColor = .gray
-                }
+            searchBar.searchTextField.backgroundColor = .white
+            searchBar.searchTextField.tintColor = .gray
+        }
         
         tableView.register(UINib(nibName: "TransactionTableViewCell",
                                  bundle: nil),
@@ -40,10 +43,11 @@ class TransactionViewController: UIViewController {
                 self?.updateConfig()
             }
         }
-        
     }
     
     private func updateConfig() {
+        
+        filteredViewModel = viewModel
         tableView.reloadData()
         totalAmountLabel.text = sModel?.amount
         localCurrencyTotalAmountLabel.text = sModel?.amountInLocalCurrency
@@ -93,6 +97,14 @@ extension TransactionViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+extension TransactionViewController: UISearchBarDelegate {
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.getFilteredData(filterStr: searchText)
+        self.updateConfig()
     }
 }
 

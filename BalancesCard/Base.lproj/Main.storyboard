@@ -84,7 +84,7 @@
                     <connections>
                         <outlet property="tableView" destination="xn1-ZL-iuf" id="Vb9-Pn-KBh"/>
                         <outlet property="totalAmountLabel" destination="YXH-a9-f3p" id="Oic-E7-wOa"/>
-                        <segue destination="5st-Qq-Keb" kind="show" id="2ZO-DJ-3G6"/>
+                        <segue destination="5st-Qq-Keb" kind="show" identifier="transactionView" id="2ZO-DJ-3G6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y8A-Hi-meB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
