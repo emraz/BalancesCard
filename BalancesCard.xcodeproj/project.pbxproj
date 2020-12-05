@@ -25,7 +25,6 @@
 		939627F22571042B00452131 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939627ED2571042B00452131 /* Alert.swift */; };
 		939627F32571042B00452131 /* Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939627EE2571042B00452131 /* Ext.swift */; };
 		939627F42571042B00452131 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939627EF2571042B00452131 /* Response.swift */; };
-		939627F52571042B00452131 /* UIButtonSubclass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939627F02571042B00452131 /* UIButtonSubclass.swift */; };
 		939627FD25714EA800452131 /* SummaryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 939627F925714EA800452131 /* SummaryHeaderView.xib */; };
 		939627FE25714EA800452131 /* SummaryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939627FA25714EA800452131 /* SummaryHeaderView.swift */; };
 		939627FF25714EA900452131 /* SummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939627FB25714EA800452131 /* SummaryTableViewCell.swift */; };
@@ -85,7 +84,6 @@
 		939627ED2571042B00452131 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		939627EE2571042B00452131 /* Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ext.swift; sourceTree = "<group>"; };
 		939627EF2571042B00452131 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
-		939627F02571042B00452131 /* UIButtonSubclass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonSubclass.swift; sourceTree = "<group>"; };
 		939627F925714EA800452131 /* SummaryHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SummaryHeaderView.xib; sourceTree = "<group>"; };
 		939627FA25714EA800452131 /* SummaryHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryHeaderView.swift; sourceTree = "<group>"; };
 		939627FB25714EA800452131 /* SummaryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryTableViewCell.swift; sourceTree = "<group>"; };
@@ -242,7 +240,6 @@
 				939627ED2571042B00452131 /* Alert.swift */,
 				939627EE2571042B00452131 /* Ext.swift */,
 				939627EF2571042B00452131 /* Response.swift */,
-				939627F02571042B00452131 /* UIButtonSubclass.swift */,
 			);
 			path = Ext;
 			sourceTree = "<group>";
@@ -441,7 +438,6 @@
 				93E0D14E2572613400A24E4D /* TransactionViewModel.swift in Sources */,
 				939627E22570FC7600452131 /* SummaryViewController.swift in Sources */,
 				939627FE25714EA800452131 /* SummaryHeaderView.swift in Sources */,
-				939627F52571042B00452131 /* UIButtonSubclass.swift in Sources */,
 				939627FF25714EA900452131 /* SummaryTableViewCell.swift in Sources */,
 				939627F22571042B00452131 /* Alert.swift in Sources */,
 				939627E72570FC9100452131 /* SummaryViewModel.swift in Sources */,

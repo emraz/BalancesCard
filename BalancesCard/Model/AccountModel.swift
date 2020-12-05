@@ -36,6 +36,7 @@ struct AccountInfo {
     let amountDescription: String
     let currency: String
     let id: Int
+    let currentBalanceInLocal: Int
 }
 
 struct SectionedAccountModel {

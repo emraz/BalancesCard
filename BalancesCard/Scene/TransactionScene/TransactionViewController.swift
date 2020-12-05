@@ -16,13 +16,20 @@ class TransactionViewController: UIViewController {
     @IBOutlet weak var localCurrencyTotalAmountLabel: UILabel!
     @IBOutlet weak var inAmountLabel: UILabel!
     @IBOutlet weak var outAmountLabel: UILabel!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var sModel: SummaryCellViewModel?
     
     private let viewModel = TransactionViewModel()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if #available(iOS 13.0, *) {
+                    searchBar.searchTextField.backgroundColor = .white
+                    searchBar.searchTextField.tintColor = .gray
+                }
+        
         tableView.register(UINib(nibName: "TransactionTableViewCell",
                                  bundle: nil),
                            forCellReuseIdentifier: TransactionTableViewCell.reuseIdentifier)
@@ -33,12 +40,13 @@ class TransactionViewController: UIViewController {
                 self?.updateConfig()
             }
         }
+        
     }
     
     private func updateConfig() {
         tableView.reloadData()
-        
-        totalAmountLabel.text = viewModel.totalAmount
+        totalAmountLabel.text = sModel?.amount
+        localCurrencyTotalAmountLabel.text = sModel?.amountInLocalCurrency
         accountNameLabel.text = sModel?.name
         inAmountLabel.text = viewModel.totalInAmount
         outAmountLabel.text = viewModel.totalOutAmount

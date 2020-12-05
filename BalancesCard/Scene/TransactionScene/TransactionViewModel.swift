@@ -130,7 +130,7 @@ class TransactionViewModel {
             }
         }
         
-        return "\(amount)"
+        return "\(currentCurrency) \(amount)"
     }
     
     func getOutAmout(section: Int) -> String {
@@ -146,19 +146,23 @@ class TransactionViewModel {
             }
         }
         
-        return "\(amount)"
+        return "\(currentCurrency) \(amount)"
     }
     
     var totalAmount: String {
-        "\(currentCurrency)\(totalAmountInAccounts)"
+        "\(currentCurrency) \(totalAmountInAccounts)"
     }
     
     var totalInAmount: String {
-        "\(currentCurrency)\(totalInAmountCurrentMonth)"
+        "\(currentCurrency) \(totalInAmountCurrentMonth)"
     }
     
     var totalOutAmount: String {
-        "\(currentCurrency)\(totalOutAmountCurrentMonth)"
+        "\(currentCurrency) \(totalOutAmountCurrentMonth)"
+    }
+    
+    var currency: String {
+        currentCurrency
     }
     
     private func showAlert(with msg: String) {

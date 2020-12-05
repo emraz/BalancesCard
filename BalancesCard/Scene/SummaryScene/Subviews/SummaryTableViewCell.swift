@@ -48,6 +48,10 @@ class SummaryCellViewModel {
         return account.amountDescription
     }
     
+    var amountInLocalCurrency: String {
+        return "JPY \(account.currentBalanceInLocal)"
+    }
+    
     var currency: String {
         return account.currency
     }

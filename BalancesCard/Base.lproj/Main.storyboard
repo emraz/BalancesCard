@@ -119,7 +119,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cXI-ZR-GvJ">
-                                <rect key="frame" x="0.0" y="112" width="414" height="662"/>
+                                <rect key="frame" x="0.0" y="176" width="414" height="598"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="5st-Qq-Keb" id="odI-Sg-08n"/>
@@ -156,6 +156,10 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search (eg: description or the amount)" translatesAutoresizingMaskIntoConstraints="NO" id="IA8-gq-p1a">
+                                <rect key="frame" x="0.0" y="112" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="j6S-Kr-kek"/>
                         <color key="backgroundColor" red="0.96840089559999998" green="0.49937707190000002" blue="0.2492598593" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -165,11 +169,14 @@
                             <constraint firstItem="HWh-Yg-PT7" firstAttribute="leading" secondItem="0B9-BI-IQz" secondAttribute="leading" id="89a-xH-PPM"/>
                             <constraint firstItem="cXI-ZR-GvJ" firstAttribute="trailing" secondItem="j6S-Kr-kek" secondAttribute="trailing" id="9aI-6y-VEh"/>
                             <constraint firstItem="cXI-ZR-GvJ" firstAttribute="leading" secondItem="j6S-Kr-kek" secondAttribute="leading" id="DKe-WX-Vbv"/>
+                            <constraint firstItem="IA8-gq-p1a" firstAttribute="trailing" secondItem="j6S-Kr-kek" secondAttribute="trailing" id="Eo3-a3-kQE"/>
                             <constraint firstItem="deK-Wg-7vb" firstAttribute="leading" secondItem="j6S-Kr-kek" secondAttribute="leading" constant="20" id="FRD-nS-1mM"/>
-                            <constraint firstItem="cXI-ZR-GvJ" firstAttribute="top" secondItem="0B9-BI-IQz" secondAttribute="bottom" constant="8" id="Ht3-7r-gBy"/>
                             <constraint firstItem="0B9-BI-IQz" firstAttribute="top" secondItem="HWh-Yg-PT7" secondAttribute="bottom" constant="5" id="LwO-KL-eeF"/>
                             <constraint firstItem="fxm-kF-fE6" firstAttribute="top" secondItem="HWh-Yg-PT7" secondAttribute="top" id="Lzb-eZ-8Cx"/>
+                            <constraint firstItem="cXI-ZR-GvJ" firstAttribute="top" secondItem="IA8-gq-p1a" secondAttribute="bottom" constant="8" id="N25-tr-Q5i"/>
                             <constraint firstItem="fxm-kF-fE6" firstAttribute="trailing" secondItem="hNM-MV-HrA" secondAttribute="trailing" id="cTK-O2-trR"/>
+                            <constraint firstItem="IA8-gq-p1a" firstAttribute="leading" secondItem="j6S-Kr-kek" secondAttribute="leading" id="eHS-hv-fas"/>
+                            <constraint firstItem="IA8-gq-p1a" firstAttribute="top" secondItem="0B9-BI-IQz" secondAttribute="bottom" constant="8" id="fpI-b6-b7d"/>
                             <constraint firstItem="cXI-ZR-GvJ" firstAttribute="bottom" secondItem="j6S-Kr-kek" secondAttribute="bottom" id="j8M-dD-W6C"/>
                             <constraint firstItem="hNM-MV-HrA" firstAttribute="bottom" secondItem="0B9-BI-IQz" secondAttribute="bottom" id="m0d-sK-yGg"/>
                             <constraint firstItem="HWh-Yg-PT7" firstAttribute="leading" secondItem="deK-Wg-7vb" secondAttribute="leading" id="orB-77-Bhp"/>
@@ -183,6 +190,7 @@
                         <outlet property="inAmountLabel" destination="fxm-kF-fE6" id="IRV-vq-32a"/>
                         <outlet property="localCurrencyTotalAmountLabel" destination="0B9-BI-IQz" id="yst-K7-l2e"/>
                         <outlet property="outAmountLabel" destination="hNM-MV-HrA" id="NAD-ty-eLR"/>
+                        <outlet property="searchBar" destination="IA8-gq-p1a" id="f4M-Vf-TmS"/>
                         <outlet property="tableView" destination="cXI-ZR-GvJ" id="bYa-v8-Jeq"/>
                         <outlet property="totalAmountLabel" destination="HWh-Yg-PT7" id="U3g-yK-MkZ"/>
                     </connections>
